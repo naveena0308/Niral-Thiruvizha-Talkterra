@@ -1,6 +1,7 @@
 import os
 import streamlit as st
 import uuid
+from config import BASE_DIR
 from database import create_db, save_petition, update_status, get_all_petitions
 from ai_processing import extract_text, analyze_text
 from email_utils import send_confirmation_email, send_status_update_email
@@ -31,7 +32,7 @@ def main():
                 return
 
             filename = uploaded_file.name if uploaded_file else "typed_text"
-            path = f"temp_{filename}"
+            path = os.path.join(BASE_DIR, "data", f"temp_{filename}")
             if uploaded_file:
                 with open(path, "wb") as f:
                     f.write(uploaded_file.getbuffer())

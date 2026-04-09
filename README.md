@@ -70,14 +70,16 @@ Sends petition submission confirmations and alerts petitioners automatically upo
 
 ```
 
-petition_app/
+Niral-Thiruvizha-Talkterra/
 │
-├── app.py                # Main Streamlit interface
-├── ai_processing.py      # OCR and AI-based analysis logic
-├── database.py           # SQLite database management
-├── email_utils.py        # Email notification handling
-├── utils.py              # Helper utilities (similarity, formatting)
-├── config.py             # Environment variables and configurations
+├── src/                  # Source code folder
+│   ├── app.py            # Main Streamlit interface
+│   ├── ai_processing.py  # OCR and AI-based analysis logic
+│   ├── database.py       # SQLite database management
+│   ├── email_utils.py    # Email notification handling
+│   ├── utils.py          # Helper utilities (similarity, formatting)
+│   └── config.py         # Environment variables and configurations
+├── data/                 # Database and temporary files
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project documentation
 
@@ -141,7 +143,7 @@ TESSERACT_PATH=C:\Program Files\Tesseract-OCR\tesseract.exe
 **5. Run the Application**
 
 ```bash
-streamlit run app.py
+streamlit run src/app.py
 ```
 
 Open your browser and navigate to `http://localhost:8501`
@@ -152,12 +154,12 @@ Open your browser and navigate to `http://localhost:8501`
 
 | Module             | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |
-| `config.py`        | Loads environment variables and application constants        |
-| `database.py`      | Handles SQLite CRUD operations for petition management       |
-| `ai_processing.py` | Performs OCR and AI-driven analysis using Gemini             |
-| `email_utils.py`   | Manages email notifications and confirmations                |
-| `utils.py`         | Contains helper functions for text similarity and formatting |
-| `app.py`           | Main application connecting all components with Streamlit UI |
+| `src/config.py`        | Loads environment variables and application constants        |
+| `src/database.py`      | Handles SQLite CRUD operations for petition management       |
+| `src/ai_processing.py` | Performs OCR and AI-driven analysis using Gemini             |
+| `src/email_utils.py`   | Manages email notifications and confirmations                |
+| `src/utils.py`         | Contains helper functions for text similarity and formatting |
+| `src/app.py`           | Main application connecting all components with Streamlit UI |
 
 ### 🤖 AI and NLP Component
 
